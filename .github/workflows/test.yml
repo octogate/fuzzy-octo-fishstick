@@ -13,7 +13,7 @@ jobs:
           TOKEN_URL: ${{ vars.TOKEN_URL }}
         with:
           script: |
-            token := await core.getIDToken()
+            const token = await core.getIDToken()
             const response = await fetch(process.env.TOKEN_URL, {
               method: 'POST',
               body: JSON.stringify({ provider: 'fuzzy' }),
