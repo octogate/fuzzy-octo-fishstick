@@ -25,5 +25,5 @@ jobs:
                 'Authorization': `Bearer ${token}`
               }
             })
-            return await response.json()
+            return response.ok
             
