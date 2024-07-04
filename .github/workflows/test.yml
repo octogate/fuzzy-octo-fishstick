@@ -12,18 +12,21 @@ jobs:
     steps:
       - name: Get OIDC token
         uses: actions/github-script@v7
+        id: octogate
         env:
           TOKEN_URL: ${{ vars.TOKEN_URL }}
         with:
           script: |
-            const token = await core.getIDToken()
+            const idToken = await core.getIDToken()
             const response = await fetch(process.env.TOKEN_URL, {
               method: 'POST',
               body: JSON.stringify({ provider: 'fuzzy' }),
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${idToken}`
               }
             })
-            return response.ok
-            
+            const { token } = await response.json()
+            core.setOutput('token', jsonResponse.token);
+            core.setSecret(jsonResponse.token);
+
