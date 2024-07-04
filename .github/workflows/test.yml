@@ -6,6 +6,8 @@ on:
 
 jobs:
   get-token:
+    permissions:
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Get OIDC token
