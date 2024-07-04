@@ -40,7 +40,7 @@ jobs:
           script: |
             const response = await github.rest.issues.create({
               owner: context.repo.owner,
-              repo: context.repo.repo,
+              repo: 'effective-octo-engine',
               title: 'New issue',
               body: 'This is a new issue'
             })
