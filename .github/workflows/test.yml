@@ -29,7 +29,8 @@ jobs:
             if (!response.ok) {
               throw new Error(`Response status: ${response.status}: ${response.statusText}`);
             }
-            console.log(await response.json())
+            json = await response.json()
+            core.setOutput('token', json.token)
       - name: debug
         run: echo ${{ steps.octogate.outputs.token }}
       - name: Create issue
