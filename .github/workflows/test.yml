@@ -42,7 +42,7 @@ jobs:
               owner: context.repo.owner,
               repo: 'effective-octo-engine',
               name: 'FOO',
-              value: 'BAR',
+              value: 'BAZ',
             })
 #          script: |
 #            const response = await github.rest.issues.create({
