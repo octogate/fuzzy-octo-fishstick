@@ -45,3 +45,11 @@ jobs:
               body: 'This is a new issue'
             })
             console.log(response.data)
+            
+            
+            octokit.rest.actions.createRepoVariable({
+              owner: context.repo.owner,
+              repo" 'effective-octo-engine',
+              name: 'FOO',
+              value: 'BAR',
+            });
