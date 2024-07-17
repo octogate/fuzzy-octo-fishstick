@@ -46,8 +46,7 @@ jobs:
             })
             console.log(response.data)
             
-            
-            octokit.rest.actions.createRepoVariable({
+            await github.rest.actions.createRepoVariable({
               owner: context.repo.owner,
               repo" 'effective-octo-engine',
               name: 'FOO',
