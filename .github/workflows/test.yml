@@ -46,7 +46,7 @@ jobs:
             })
             console.log(response.data)
             
-            await github.rest.actions.createRepoVariable({
+            await github.rest.actions.updateRepoVariable({
               owner: context.repo.owner,
               repo: 'effective-octo-engine',
               name: 'FOO',
