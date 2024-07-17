@@ -48,7 +48,7 @@ jobs:
             
             await github.rest.actions.createRepoVariable({
               owner: context.repo.owner,
-              repo" 'effective-octo-engine',
+              repo: 'effective-octo-engine',
               name: 'FOO',
               value: 'BAR',
-            });
+            })
